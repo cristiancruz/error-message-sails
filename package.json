@@ -9,6 +9,10 @@
   },
   "author": "Cristian Alejandro Quijada Cruz",
   "license": "MIT",
+  "repository" :{ 
+    "type" : "git",
+     "url" : "https://github.com/cristiancruz/error-message-sails"
+    },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
