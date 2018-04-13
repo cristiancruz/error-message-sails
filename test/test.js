@@ -1,31 +1,41 @@
 const expect = require('chai').expect
-const error = require('..').default
+const {errorMessageCustom} = require('../lib/src/errors');
 
 describe('#errors', function(){
-	// 13 casos
-    // it('Error E_NOOP', function(){
-	// 	const code = error("E_NOOP")
-		// console.log(code);
-		// console.log({msg:"Query is a no-op.", error_code: 500});
-		// console.log({msg:"Query is a no-op.", error_code: 500});
-		// expect(code).to.equal({ msg: 'Query is a no-op.', error_code: 500 })
-	// })
-	// it('Si la palabra inicia con Z, se le añade "pe" al final', function(){
-	// 	const translation = platzom("Zorro")
-    //     const translation2 = platzom("Zarpar")
-        
-	// 	expect(translation).to.equal("Zorrope")
-	// 	expect(translation2).to.equal("Zarppe")
-	// })	
-	// it('Si la palabra traducida tiene 10 o más letras, se debe partir a la mitad y unir con un guión del medio', function(){
-	// 	const translation = platzom("abecedario")
-	// 	expect(translation).to.equal("abece-dario")		
-	// })	
-	// it('Si la palabra original es un palíndromo,  ninguna regla anterior cuenta y se devuelve la misma palabra intercalando mayúsculas y minúsculas', function(){
-	// 	const translation = platzom("sometemos")
-	// 	expect(translation).to.equal("SoMeTeMoS")				
-	// })
+    it('Error E_INVALID_VALUES_TO_SET', function(){
+		let result = errorMessageCustom.onlyErrors("E_INVALID_VALUES_TO_SET");
+		let test = { msg: 'Datos invalidos para actualizar', error_code: 400 };
+		expect(result).to.deep.equal(test)
+		console.log(result);
+	})
+	it('Error sails & traduccion', function(){
+		var error = {
+			"cause": {
+				"name": "UsageError",
+				"code": "E_INVALID_NEW_RECORD",
+				"details": "Missing value for required attribute `name`.  Expected a string, but instead, got: undefined"
+			},
+			"isOperational": true,
+			"code": "E_INVALID_NEW_RECORD",
+			"details": "Missing value for required attribute `name`.  Expected a string, but instead, got: undefined"
+		}
+		var result = {
+			"cause": {
+				"name": "UsageError",
+				"code": "E_INVALID_NEW_RECORD",
+				"details": "Missing value for required attribute `name`.  Expected a string, but instead, got: undefined"
+			},
+			"isOperational": true,
+			"code": "E_INVALID_NEW_RECORD",
+			"details": "Missing value for required attribute `name`.  Expected a string, but instead, got: undefined",
+			"traducction": {
+				"msg": "Datos iniciales no válidos para el nuevo registro.",
+				"error_code": 400
+			}
+		}
+		expect(result).to.deep.equal(errorMessageCustom.completeError(error))
+		console.log(errorMessageCustom.completeError(error));
+	})
 })
-
 
 

@@ -1,6 +1,6 @@
 {
   "name": "error-message-sails",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Paquete para regresar mensajes a errores clásicos de sails en español",
   "main": "lib/src/errors.js",
   "scripts": {
@@ -9,14 +9,19 @@
   },
   "author": "Cristian Alejandro Quijada Cruz",
   "license": "MIT",
-  "repository" :{ 
-    "type" : "git",
-     "url" : "https://github.com/cristiancruz/error-message-sails"
-    },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cristiancruz/error-message-sails"
+  },
+  "keywords": [
+    "Sails","Error custom"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
-    "mocha": "^5.0.5"
+    "mocha": "^5.0.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-2": "^6.24.1"
   }
 }
