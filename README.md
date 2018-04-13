@@ -2,7 +2,7 @@
 ## Installation
 - ` npm install error-message-sails `
 ## Use
-- ` const {errorMessageCustom} = require('../lib/src/errors');  ` 
+- ` const {errorMessageCustom} = require('error-message-sails');  ` 
 - ` errorMessageCustom.onlyErrors(errorCodeSails);`
 - ` errorMessageCustom.completeError(errorSails)`
 ## Code error base:
