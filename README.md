@@ -22,7 +22,7 @@
 ## Example results:
  ```json
  // Option 1
- { msg: 'Datos invalidos para actualizar', error_code: 400 }
+ { "msg": "Datos invalidos para actualizar", "error_code": 400 }
 
 //  Option 2
 {
